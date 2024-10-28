@@ -1,15 +1,17 @@
-package co.example.kafkatraining.jpa.entity;
+package co.example.kafkatraining.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.Getter;
+import lombok.*;
 
-@Entity
 @Getter
-public class ItemEntity {
-
-    @Id
-    private String itemId;
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Item {
+    private String id;
+    private String name;
+    private String sku;
+    private double price;
     private int quantity;
 
     public void decreaseQuantity(int quantity) throws Exception {
